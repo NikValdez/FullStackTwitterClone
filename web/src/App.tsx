@@ -3,6 +3,7 @@ import { setContext } from 'apollo-link-context'
 import React from "react"
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import "./App.css"
+import IsAuthenticated from "./components/IsAuthenticated"
 import Landing from "./components/Landing"
 import Users from "./components/Users"
 import Login from "./pages/Login"
@@ -34,6 +35,7 @@ function App() {
     <ApolloProvider client={client}>
       <Router>
         <Switch>
+
           <Route path="/landing" >
             <Landing />
           </Route>
@@ -43,9 +45,12 @@ function App() {
           <Route path="/login">
             <Login />
           </Route>
-          <Route path="/">
-            <Users />
-          </Route>
+          <IsAuthenticated>
+
+            <Route path="/users">
+              <Users />
+            </Route>
+          </IsAuthenticated>
         </Switch>
       </Router>
     </ApolloProvider>
