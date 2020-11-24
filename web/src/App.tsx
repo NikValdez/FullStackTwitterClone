@@ -46,7 +46,6 @@ function App() {
             <Login />
           </Route>
           <IsAuthenticated>
-
             <Route path="/users">
               <Users />
             </Route>
