@@ -1,0 +1,94 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+  }
+  
+  .main .wrapper {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+  }
+  
+  .main .left,
+  .main .right {
+    width: 50%;
+  }
+  
+  .main .left {
+    background: var(--main-color);
+    background-size: cover;
+    display: flex;
+  }
+  
+  .main .left .items-wrapper {
+    color: #fff;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .main .left .items-wrapper .item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    max-width: 400px;
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
+  }
+  
+  .main .left .items-wrapper .item .label {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  .main .center {
+    margin-top: 230px;
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .main .center .btn-sign-up {
+    display: block;
+    margin-bottom: 15px;
+    background-color: var(--main-color);
+    border: 1px solid var(--main-color);
+    color: #fff;
+    border-radius: 100px;
+    padding: 6px 16px;
+    text-align: center;
+    margin-top: 15px;
+  }
+  
+  .main .center .btn-login {
+    display: block;
+    width: auto;
+    text-align: center;
+  }
+  
+  .main .left .items-wrapper .icon {
+    font-size: 25px;
+    margin-right: 15px;
+  }
+  
+  .btn-login {
+    background-color: #fff;
+    border: 1px solid var(--main-color);
+    color: #1da1f2;
+    border-radius: 100px;
+    padding: 12px;
+    font-size: 14px;
+    width: auto;
+    font-weight: bold;
+  }
+  
+  .btn-login:hover {
+    background-color: #eaf5fd;
+    color: #1da1f2;
+  }
+  
