@@ -54,49 +54,92 @@ export const Mutation = mutationType({
       },
     })
 
-    t.field('createDraft', {
-      type: 'Post',
+    // t.field('createDraft', {
+    //   type: 'Post',
+    //   args: {
+    //     title: stringArg({ nullable: false }),
+    //     content: stringArg(),
+    //   },
+    //   resolve: (parent, { title, content }, ctx) => {
+    //     const userId = getUserId(ctx)
+    //     if (!userId) throw new Error('Could not authenticate user.')
+    //     return ctx.prisma.post.create({
+    //       data: {
+    //         title,
+    //         content,
+    //         published: false,
+    //         author: { connect: { id: Number(userId) } },
+    //       },
+    //     })
+    //   },
+    // })
+
+    t.field('createProfile', {
+      type: 'Profile',
       args: {
-        title: stringArg({ nullable: false }),
-        content: stringArg(),
+        bio: stringArg(),
+        location: stringArg(),
+        website: stringArg(),
+        avatar: stringArg(),
       },
-      resolve: (parent, { title, content }, ctx) => {
+      resolve: (parent, args, ctx) => {
         const userId = getUserId(ctx)
         if (!userId) throw new Error('Could not authenticate user.')
-        return ctx.prisma.post.create({
+        return ctx.prisma.profile.create({
           data: {
-            title,
-            content,
-            published: false,
-            author: { connect: { id: Number(userId) } },
+            ...args,
+            User: { connect: { id: Number(userId) } },
           },
         })
       },
     })
+    t.field('updateProfile', {
+      type: 'Profile',
+      args: {
+        id: intArg(),
+        bio: stringArg(),
+        location: stringArg(),
+        website: stringArg(),
+        avatar: stringArg(),
+      },
+      resolve: (parent, { id, ...args }, ctx) => {
+        const userId = getUserId(ctx)
+        if (!userId) throw new Error('Could not authenticate user.')
 
-    t.field('deletePost', {
-      type: 'Post',
-      nullable: true,
-      args: { id: intArg({ nullable: false }) },
-      resolve: (parent, { id }, ctx) => {
-        return ctx.prisma.post.delete({
+        return ctx.prisma.profile.update({
+          data: {
+            ...args,
+          },
           where: {
-            id,
+            id: Number(id),
           },
         })
       },
     })
 
-    t.field('publish', {
-      type: 'Post',
-      nullable: true,
-      args: { id: intArg({ nullable: false }) },
-      resolve: (parent, { id }, ctx) => {
-        return ctx.prisma.post.update({
-          where: { id },
-          data: { published: true },
-        })
-      },
-    })
+    //     t.field('deletePost', {
+    //       type: 'Post',
+    //       nullable: true,
+    //       args: { id: intArg({ nullable: false }) },
+    //       resolve: (parent, { id }, ctx) => {
+    //         return ctx.prisma.post.delete({
+    //           where: {
+    //             id,
+    //           },
+    //         })
+    //       },
+    //     })
+
+    //     t.field('publish', {
+    //       type: 'Post',
+    //       nullable: true,
+    //       args: { id: intArg({ nullable: false }) },
+    //       resolve: (parent, { id }, ctx) => {
+    //         return ctx.prisma.post.update({
+    //           where: { id },
+    //           data: { published: true },
+    //         })
+    //       },
+    //     })
   },
 })

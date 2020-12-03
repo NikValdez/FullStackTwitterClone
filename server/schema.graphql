@@ -8,32 +8,35 @@ type AuthPayload {
 }
 
 type Mutation {
-  createDraft(content: String, title: String!): Post
-  deletePost(id: Int!): Post
+  createProfile(avatar: String, bio: String, location: String, website: String): Profile
   login(email: String!, password: String!): AuthPayload
-  publish(id: Int!): Post
   signup(email: String!, name: String, password: String!): AuthPayload
+  updateProfile(avatar: String, bio: String, id: Int, location: String, website: String): Profile
 }
 
-type Post {
-  author: User
-  content: String
+type Profile {
+  avatar: String
+  bio: String
   id: Int!
-  published: Boolean!
-  title: String!
+  location: String
+  website: String
 }
 
 type Query {
-  feed: [Post]
-  filterPosts(searchString: String): [Post]
   me: User
-  post(id: Int): Post
   users: [User]
+}
+
+type Tweet {
+  author: User
+  content: String
+  id: Int!
 }
 
 type User {
   email: String!
   id: Int!
   name: String
-  posts: [Post!]!
+  Profile: Profile
+  tweets: [Tweet!]!
 }
