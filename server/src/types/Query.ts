@@ -1,4 +1,4 @@
-import { queryType } from '@nexus/schema'
+import { intArg, queryType } from '@nexus/schema'
 import { getUserId } from '../utils'
 
 export const Query = queryType({
@@ -20,6 +20,28 @@ export const Query = queryType({
       type: 'User',
       resolve: (parent, args, ctx) => {
         return ctx.prisma.user.findMany()
+      },
+    })
+
+    // t.list.field('feed', {
+    //   type: 'Post',
+    //   resolve: (parent, args, ctx) => {
+    //     return ctx.prisma.post.findMany({
+    //       where: { published: true },
+    //     })
+    //   },
+    // })
+
+    t.field('tweet', {
+      type: 'Tweet',
+      nullable: true,
+      args: { id: intArg() },
+      resolve: (parent, { id }, ctx) => {
+        return ctx.prisma.tweet.findOne({
+          where: {
+            id: Number(id),
+          },
+        })
       },
     })
   },

@@ -9,6 +9,7 @@ type AuthPayload {
 
 type Mutation {
   createProfile(avatar: String, bio: String, location: String, website: String): Profile
+  createTweet(content: String, title: String!): Tweet
   login(email: String!, password: String!): AuthPayload
   signup(email: String!, name: String, password: String!): AuthPayload
   updateProfile(avatar: String, bio: String, id: Int, location: String, website: String): Profile
@@ -24,6 +25,7 @@ type Profile {
 
 type Query {
   me: User
+  tweet(id: Int): Tweet
   users: [User]
 }
 

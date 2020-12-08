@@ -4,3 +4,25 @@
 }
 
 @import "./styles/login.css";
+
+
+textarea {
+  color: rgb(38, 50, 56);
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 1px;
+  border: 2px solid lightgray;
+
+  padding: 10px 20px;
+
+  border-radius: 5px;
+  /* outline: none; */
+  box-sizing: border-box;
+  margin-bottom: 27px;
+}
+
+textarea:focus { 
+  outline: none;
+  border-color: var(--main-color);
+  box-shadow: 0 0 3px var(--main-color)
+}
