@@ -35,14 +35,14 @@ interface ProfileValues {
 }
 
 function UpdateProfile() {
-    const {loading, error, data} = useQuery(ME_QUERY)
+  const { loading, error, data } = useQuery(ME_QUERY)
   const [updateProfile] = useMutation(UPDATE_PROFILE_MUTATION, {
     refetchQueries: [{ query: ME_QUERY }],
   })
   const [modalIsOpon, setIsOpen] = useState(false)
 
-  if(loading) return <p>Loading...</p>
-  if(error) return <p>{error.message}</p>
+  if (loading) return <p>Loading...</p>
+  if (error) return <p>{error.message}</p>
 
   const initialValues: ProfileValues = {
     id: data.me.Profile.id,
@@ -61,7 +61,9 @@ function UpdateProfile() {
 
   return (
     <div>
-      <button onClick={openModal}>Update Profile</button>
+      <button onClick={openModal} className="edit-button">
+        Edit Profile
+      </button>
       <Modal
         isOpen={modalIsOpon}
         onRequestClose={closeModal}
@@ -98,4 +100,4 @@ function UpdateProfile() {
     </div>
   )
 }
-export default UpdateProfile 
+export default UpdateProfile

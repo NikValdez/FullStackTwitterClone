@@ -53,7 +53,9 @@ function CreateProfile() {
 
   return (
     <div>
-      <button onClick={openModal}>Create Profile</button>
+      <button onClick={openModal} className="edit-button">
+        Create Profile
+      </button>
       <Modal
         isOpen={modalIsOpon}
         onRequestClose={closeModal}

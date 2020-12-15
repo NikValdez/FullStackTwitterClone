@@ -1,9 +1,10 @@
 :root {
   --main-color: #55abee;
   --button-hover-color: #228dcf;
+  --accent: #E1E8ED;
 }
 
-@import "./styles/login.css";
+/* @import "./styles/login.css"; */
 
 
 textarea {

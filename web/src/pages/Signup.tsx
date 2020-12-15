@@ -4,6 +4,7 @@ import React from "react"
 import { Link, useHistory } from "react-router-dom"
 import * as Yup from "yup"
 import TwitterLogo from "../styles/assets/twitter-logo.png"
+import "../styles/login.css"
 
 const SIGNUP_MUTATION = gql`
   mutation signup($name: String, $email: String!, $password: String!) {
