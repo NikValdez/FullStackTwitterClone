@@ -1,0 +1,79 @@
+.featherIcon {
+  @media only screen and (min-width: 1250px) {
+    display: none;
+  }
+}
+
+.title {
+  margin-left: 15px;
+  @media only screen and (max-width: 1250px) {
+    display: none;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+.icon-links {
+  display: grid;
+  @media only screen and (max-width: 1200px) {
+    grid-template-columns: 0.5fr;
+    display: none;
+  }
+}
+h2 {
+  font-size: 22px;
+  @media only screen and (max-width: 1200px) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  font-size: 16px;
+  padding: 10px;
+  border-radius: 25px;
+  width: 70%;
+}
+h2:hover {
+  /* color: ${(props) => props.theme.primary}; */
+  background: #55abee29;
+  @media only screen and (max-width: 1200px) {
+    /* color: ${(props) => props.theme.primary}; */
+    background: transparent;
+  }
+}
+
+button,
+button span {
+  cursor: pointer;
+  border-radius: 25px;
+}
+
+button {
+  background-color: #55abee;
+  border: 0;
+  color: #fff;
+
+  font-weight: bold;
+}
+button:focus {
+  outline: none;
+}
+button span {
+  display: block;
+  padding: 0.4em 0.2em;
+  transition: all 0.1s linear;
+  font-size: 15px;
+}
+button:hover {
+  background: #228dcf;
+}
+button:active span {
+  background-color: rgba(0, 0, 0, 0.2);
+  outline: 0;
+}
+button span:focus {
+  outline: 0;
+}
+button:disabled {
+  opacity: 0.5;
+}
