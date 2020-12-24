@@ -102,7 +102,6 @@ export const Mutation = mutationType({
     t.field('createTweet', {
       type: 'Tweet',
       args: {
-        title: stringArg({ nullable: false }),
         content: stringArg(),
       },
       resolve: (parent, { content }, ctx) => {
@@ -111,7 +110,6 @@ export const Mutation = mutationType({
         return ctx.prisma.tweet.create({
           data: {
             content,
-
             author: { connect: { id: Number(userId) } },
           },
         })

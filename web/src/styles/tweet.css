@@ -1,0 +1,52 @@
+.tweet-button {
+  width: 25%;
+  justify-self: end;
+  padding: 5px;
+  padding-left: 20px;
+  padding-right: 20px;
+  color: white;
+  background-color: var(--main-color);
+  border-color: var(--main-color);
+  font-size: 15px;
+  border: 1px solid var(--main-color);
+}
+.tweet-button:hover {
+  background-color: white;
+  color: var(--main-color);
+  border: 1px solid var(--main-color);
+}
+.tweet-button:focus {
+  outline: none;
+}
+
+textarea {
+  border: none;
+  font-size: 18px;
+}
+
+textarea:focus {
+  outline: none;
+  border: none;
+  box-shadow: none;
+}
+
+.exit {
+  color: var(--main-color);
+  margin-bottom: 20px;
+  margin-top: 0;
+}
+.header {
+  border-bottom: 1px solid var(--accent);
+  width: 110%;
+  padding: 0;
+  margin-left: -20px;
+  margin-top: 10px;
+}
+.footer {
+  border-bottom: 1px solid var(--accent);
+  width: 100%;
+  padding: 0;
+
+  margin-top: 10px;
+  margin-bottom: 20px;
+}

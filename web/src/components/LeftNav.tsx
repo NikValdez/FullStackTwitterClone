@@ -2,6 +2,7 @@ import React from "react"
 import { Link } from "react-router-dom"
 import favicon from "../styles/assets/twitter-logo.png"
 import "../styles/leftNav.css"
+import Tweet from "./Tweet"
 
 function LeftNav() {
   return (
@@ -39,9 +40,7 @@ function LeftNav() {
           <span className="title">More</span>
         </h2>
       </Link>
-      <button style={{ marginRight: "10px", marginTop: "30px" }}>
-        <span style={{ padding: "15px 70px 15px 70px" }}>Tweet</span>
-      </button>
+      <Tweet />
     </div>
   )
 }
