@@ -1,0 +1,22 @@
+.logout {
+  position: absolute;
+  bottom: 0;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+h4 {
+  padding: 5px;
+  border-radius: 25px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 10px;
+}
+
+h4:hover {
+  background: #55abee29;
+  padding: 5px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 10px;
+}
