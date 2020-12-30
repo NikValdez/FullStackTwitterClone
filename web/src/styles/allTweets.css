@@ -1,0 +1,23 @@
+.tweet-header {
+	display: grid;
+	grid-template-columns: 0.5fr 0.5fr 1.5fr 7.5fr;
+	margin-left: 10px;
+}
+
+.tweet-container {
+	border-bottom: 1px solid var(--accent);
+	margin-top: 10px;
+}
+
+p {
+	margin-left: 10px;
+}
+
+.date-time {
+	margin-top: 5px;
+	font-size: 12px;
+}
+
+.name {
+	margin-top: 0px;
+}
