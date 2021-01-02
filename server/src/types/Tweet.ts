@@ -7,5 +7,6 @@ export const Tweet = objectType({
 		t.model.content()
 		t.model.author()
 		t.model.createdAt()
+		t.model.likes()
 	}
 })

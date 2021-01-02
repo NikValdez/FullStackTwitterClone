@@ -1,3 +1,5 @@
 # Prisma Migrate lockfile v1
 
 20201203195201-profile
+20210101234213-add-likes
+20210102185916-remove-unique-user-id

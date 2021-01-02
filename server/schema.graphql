@@ -9,9 +9,20 @@ type AuthPayload {
 
 scalar DateTime
 
+type LikedTweet {
+  id: Int!
+  likedAt: DateTime!
+  tweet: Tweet!
+}
+
+input LikedTweetWhereUniqueInput {
+  id: Int
+}
+
 type Mutation {
   createProfile(avatar: String, bio: String, location: String, website: String): Profile
   createTweet(content: String): Tweet
+  likeTweet(id: Int): LikedTweet
   login(email: String!, password: String!): AuthPayload
   signup(email: String!, name: String, password: String!): AuthPayload
   updateProfile(avatar: String, bio: String, id: Int, location: String, website: String): Profile
@@ -37,11 +48,13 @@ type Tweet {
   content: String
   createdAt: DateTime!
   id: Int!
+  likes(after: LikedTweetWhereUniqueInput, before: LikedTweetWhereUniqueInput, first: Int, last: Int): [LikedTweet!]!
 }
 
 type User {
   email: String!
   id: Int!
+  likedTweet(after: LikedTweetWhereUniqueInput, before: LikedTweetWhereUniqueInput, first: Int, last: Int): [LikedTweet!]!
   name: String
   Profile: Profile
   tweets: [Tweet!]!

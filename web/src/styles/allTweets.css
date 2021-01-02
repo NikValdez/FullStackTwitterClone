@@ -21,3 +21,10 @@ p {
 .name {
 	margin-top: 0px;
 }
+
+.likes {
+	display: grid;
+	grid-template-columns: 1fr 1fr 10fr;
+	margin-left: 10px;
+	margin-bottom: 10px;
+}
