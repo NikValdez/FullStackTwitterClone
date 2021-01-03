@@ -1,5 +1,6 @@
 import { useMutation } from "@apollo/client"
 import gql from "graphql-tag"
+import { ME_QUERY } from "../pages/Profile"
 import { TWEETS_QUERY } from "./AllTweets"
 
 const LIKE_TWEET_MUTATION = gql`
@@ -16,7 +17,7 @@ interface Props {
 
 export default function LikeTweet({ id }: Props) {
 	const [ likeTweet ] = useMutation(LIKE_TWEET_MUTATION, {
-		refetchQueries: [ { query: TWEETS_QUERY } ]
+		refetchQueries: [ { query: TWEETS_QUERY }, { query: ME_QUERY } ]
 	})
 
 	const handleCreateLike = async () => {

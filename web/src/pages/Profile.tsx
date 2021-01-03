@@ -52,7 +52,7 @@ function Profile() {
               </span>
             </div>
             <div className="avatar">
-              {data.me.Profile.avatar ? (
+              {data.me.Profile?.avatar ? (
                 <img
                   src={data.me.Profile.avatar}
                   style={{ width: "150px", borderRadius: "50%" }}

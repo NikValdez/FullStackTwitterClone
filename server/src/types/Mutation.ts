@@ -131,5 +131,18 @@ export const Mutation = mutationType({
 				})
 			}
 		})
+		t.field("deleteLike", {
+			type: "LikedTweet",
+			args: {
+				id: intArg({ nullable: false })
+			},
+			resolve: (parent, { id }, ctx) => {
+				const userId = getUserId(ctx)
+				if (!userId) throw new Error("Could not authenticate user.")
+				return ctx.prisma.likedTweet.delete({
+					where: { id: id }
+				})
+			}
+		})
 	}
 })

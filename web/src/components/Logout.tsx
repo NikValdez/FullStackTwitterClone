@@ -33,7 +33,7 @@ export default function Logout() {
       <span onClick={openModal} style={{ flex: 1, flexDirection: "row" }}>
         <h4>
           <img
-            src={data.me.Profile.avatar}
+            src={data.me.Profile?.avatar}
             style={{ width: "40px", borderRadius: "50%" }}
             alt="avatar"
           />
