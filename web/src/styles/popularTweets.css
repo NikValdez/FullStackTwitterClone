@@ -1,0 +1,46 @@
+.popular-tweets {
+	border-radius: 15px;
+	padding-top: 20px;
+	margin-left: 20px;
+	margin-top: 10px;
+	padding-right: 5px;
+	border: 1px solid var(--accent);
+	background: #cfe6f829;
+	margin-top: 30px;
+}
+
+.trending {
+	border-bottom: 1px solid var(--accent);
+	text-align: center;
+}
+
+.date {
+	color: gray;
+}
+
+.date-title {
+	display: grid;
+	grid-template-columns: 2fr 0.5fr;
+	/* border-bottom: 1px solid ${(props) => props.theme.lightAccent}; */
+	width: 100%;
+	padding-top: 5px;
+}
+
+.tweet-likes {
+	font-size: 12px;
+	margin-left: 20px;
+}
+.title-logo {
+	display: grid;
+	grid-template-columns: 0.5fr 2fr;
+	margin-left: 5px;
+}
+
+.popular-tweet-container {
+	border-bottom: 1px solid var(--accent);
+	margin-bottom: 20px;
+}
+.popular-tweet-container:hover {
+	margin-bottom: 20px;
+	background-color: var(--accent);
+}
