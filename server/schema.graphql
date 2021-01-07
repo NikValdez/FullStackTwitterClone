@@ -7,6 +7,16 @@ type AuthPayload {
   user: User
 }
 
+type Comment {
+  content: String
+  createdAt: DateTime!
+  id: Int!
+}
+
+input CommentWhereUniqueInput {
+  id: Int
+}
+
 scalar DateTime
 
 type LikedTweet {
@@ -20,6 +30,7 @@ input LikedTweetWhereUniqueInput {
 }
 
 type Mutation {
+  createComment(content: String!, id: Int!): Comment
   createProfile(avatar: String, bio: String, location: String, website: String): Profile
   createTweet(content: String): Tweet
   deleteLike(id: Int!): LikedTweet
@@ -46,6 +57,7 @@ type Query {
 
 type Tweet {
   author: User
+  comments(after: CommentWhereUniqueInput, before: CommentWhereUniqueInput, first: Int, last: Int): [Comment!]!
   content: String
   createdAt: DateTime!
   id: Int!
@@ -53,6 +65,7 @@ type Tweet {
 }
 
 type User {
+  comments(after: CommentWhereUniqueInput, before: CommentWhereUniqueInput, first: Int, last: Int): [Comment!]!
   email: String!
   id: Int!
   likedTweet(after: LikedTweetWhereUniqueInput, before: LikedTweetWhereUniqueInput, first: Int, last: Int): [LikedTweet!]!
