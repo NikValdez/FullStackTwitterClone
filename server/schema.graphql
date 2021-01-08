@@ -11,6 +11,7 @@ type Comment {
   content: String
   createdAt: DateTime!
   id: Int!
+  User: User
 }
 
 input CommentWhereUniqueInput {

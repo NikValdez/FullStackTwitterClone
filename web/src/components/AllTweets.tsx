@@ -3,6 +3,7 @@ import { formatDistance } from "date-fns"
 import { subDays } from "date-fns/esm"
 import gql from "graphql-tag"
 import React from "react"
+import { Link } from "react-router-dom"
 import { ME_QUERY } from "../pages/Profile"
 import "../styles/allTweets.css"
 import CreateComment from "./CreateComment"
@@ -68,18 +69,20 @@ export default function AllTweets() {
 		<div>
 			{data.tweets.map((tweet: AllTweets) => (
 				<div className="tweet-container">
-					<div className="tweet-header">
-						<img
-							src={tweet.author.Profile.avatar}
-							style={{ width: "40px", borderRadius: "50%" }}
-							alt="avatar"
-						/>
-						<h4 className="name">{tweet.author.name} </h4>
-						<p className="date-time">
-							{formatDistance(subDays(new Date(tweet.createdAt), 0), new Date())} ago
-						</p>
-					</div>
-					<p>{tweet.content}</p>
+					<Link to={`/tweet/${tweet.id}`}>
+						<div className="tweet-header">
+							<img
+								src={tweet.author.Profile.avatar}
+								style={{ width: "40px", borderRadius: "50%" }}
+								alt="avatar"
+							/>
+							<h4 className="name">{tweet.author.name} </h4>
+							<p className="date-time">
+								{formatDistance(subDays(new Date(tweet.createdAt), 0), new Date())} ago
+							</p>
+						</div>
+						<p>{tweet.content}</p>
+					</Link>
 					<div className="likes">
 						{meData.me.likedTweet.map((t: LikedTweets) => t.tweet.id).includes(tweet.id) ? (
 							<span>

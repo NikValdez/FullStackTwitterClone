@@ -6,5 +6,6 @@ export const Comment = objectType({
 		t.model.id()
 		t.model.content()
 		t.model.createdAt()
+		t.model.User()
 	}
 })
