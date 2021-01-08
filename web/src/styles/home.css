@@ -14,9 +14,9 @@
 	position: relative;
 	border: 1px solid var(--accent);
 }
-.home-header {
+/* .home-header {
 	border-bottom: 1px solid var(--accent);
-}
+} */
 .home-title {
 	text-align: left;
 	margin-left: 10px;
