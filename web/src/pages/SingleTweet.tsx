@@ -1,6 +1,7 @@
 import { gql, useQuery } from "@apollo/client"
 import React from "react"
 import { useHistory, useParams } from "react-router-dom"
+import CreateReply from "../components/CreateReply"
 import LeftNav from "../components/LeftNav"
 import PopularTweets from "../components/PopularTweets"
 import "../styles/home.css"
@@ -77,9 +78,9 @@ function SingleTweet() {
               </span>
                 <h3 className="home-title">Tweet</h3>
             </div>
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 8fr", marginTop: "10px" }}>
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 8fr", marginTop: "10px", marginLeft: '10px' }}>
 					<img src={data.tweet.author.Profile.avatar} style={{ width: "40px", borderRadius: "50%" }} alt="avatar" />
-					<h5>{data.tweet.author.naem}</h5>
+					<h5>{data.tweet.author.name}</h5>
 				</div>
 				<p
 					style={{
@@ -94,11 +95,12 @@ function SingleTweet() {
 				</p>
                 {data.tweet.comments.map((comment: CommentType) => (
                     <>
-                     <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 8fr", marginTop: "10px" }}>
+                     <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 8fr", marginTop: "10px", marginLeft: '10px' }}>
                <img src={comment.User.Profile.avatar} style={{ width: "40px", borderRadius: "50%" }} alt="avatar" />
                <h5>{comment.User.name}</h5>
            </div>
            <p>{comment.content}</p>
+            <CreateReply name={comment.User.name} avatar={comment.User.Profile.avatar} id={data.tweet.id} comment={comment.content} commentId={comment.id}/>
                     </>
                 ))}
         </div>

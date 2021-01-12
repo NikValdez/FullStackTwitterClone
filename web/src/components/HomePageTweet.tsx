@@ -39,13 +39,14 @@ export default function HomPageTweet() {
 			<Formik
 				initialValues={initialValues}
 				validationSchema={validationSchema}
-				onSubmit={async (values, { setSubmitting }) => {
+				onSubmit={async (values, { setSubmitting, resetForm }) => {
 					setSubmitting(true)
 					await createTweet({
 						variables: values
 					})
 
 					setSubmitting(false)
+					resetForm()
 				}}
 			>
 				<Form>

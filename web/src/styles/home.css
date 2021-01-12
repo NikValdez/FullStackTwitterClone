@@ -14,15 +14,16 @@
 	position: relative;
 	border: 1px solid var(--accent);
 }
-/* .home-header {
+.home-header {
 	border-bottom: 1px solid var(--accent);
-} */
+	display: grid;
+	grid-template-columns: 0.5fr 0.5fr 12fr;
+}
 .home-title {
 	text-align: left;
 	margin-left: 10px;
 	margin-bottom: 10px;
 	margin-top: 5px;
-	border-bottom: 1px solid var(--accent);
 	width: 90%;
 	padding: 10px;
 }

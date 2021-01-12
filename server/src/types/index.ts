@@ -1,5 +1,6 @@
 export * from "./AuthPayload"
 export * from "./Comment"
+export * from "./Following"
 export * from "./LikedTweet"
 export * from "./Mutation"
 export * from "./Profile"

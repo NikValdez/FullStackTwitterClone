@@ -41,5 +41,17 @@ export const Query = queryType({
 				})
 			}
 		})
+		t.field("user", {
+			type: "User",
+			nullable: true,
+			args: { id: intArg() },
+			resolve: (parent, { id }, ctx) => {
+				return ctx.prisma.user.findOne({
+					where: {
+						id: Number(id)
+					}
+				})
+			}
+		})
 	}
 })

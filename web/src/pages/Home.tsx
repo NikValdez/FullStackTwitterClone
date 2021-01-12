@@ -39,9 +39,9 @@ function Home() {
         <div className="home">
             <div className="home-header">
                 <h3 className="home-title">Home</h3>
+            </div>
                 <HomPageTweet/>
                 <AllTweets/>
-            </div>
         </div>
         <div className="right">
           <PopularTweets/>

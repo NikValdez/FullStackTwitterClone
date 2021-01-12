@@ -10,5 +10,6 @@ export const User = objectType({
 		t.model.Profile()
 		t.model.likedTweet()
 		t.model.comments()
+		t.model.Following()
 	}
 })

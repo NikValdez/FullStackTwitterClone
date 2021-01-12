@@ -51,6 +51,7 @@ export default function AllTweets() {
 		likes: []
 		comments: []
 		author: {
+			id: number
 			name: string
 			Profile: {
 				avatar: string
@@ -76,7 +77,9 @@ export default function AllTweets() {
 								style={{ width: "40px", borderRadius: "50%" }}
 								alt="avatar"
 							/>
-							<h4 className="name">{tweet.author.name} </h4>
+							<Link to={`/user/${tweet.author.id}`}>
+								<h4 className="name">{tweet.author.name} </h4>
+							</Link>
 							<p className="date-time">
 								{formatDistance(subDays(new Date(tweet.createdAt), 0), new Date())} ago
 							</p>

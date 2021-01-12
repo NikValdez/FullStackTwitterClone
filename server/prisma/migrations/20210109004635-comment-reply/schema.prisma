@@ -4,7 +4,7 @@ generator client {
 
 datasource postgresql {
   provider = "postgresql"
-  url      = env("DATABASE_URL")
+  url = "***"
 }
 
 model Tweet {
@@ -26,7 +26,6 @@ model User {
   Profile    Profile?
   likedTweet LikedTweet[]
   comments   Comment[]
-  Following  Following[]
 }
 
 model LikedTweet {
@@ -36,15 +35,6 @@ model LikedTweet {
   userId  Int?
   User    User?    @relation(fields: [userId], references: [id])
   tweetId Int
-}
-
-model Following {
-  id       Int    @id @default(autoincrement())
-  name     String
-  avatar   String
-  followId Int
-  User     User?  @relation(fields: [userId], references: [id])
-  userId   Int?
 }
 
 model Profile {
