@@ -96,7 +96,7 @@ export default function CreateComment({ tweet, avatar, name, id }: Props) {
 					}}
 				>
 					<Form>
-						<img src={data.me.Profile.avatar} style={{ width: "40px", borderRadius: "50%" }} alt="avatar" />
+						<img src={data.me.Profile?.avatar} style={{ width: "40px", borderRadius: "50%" }} alt="avatar" />
 						<Field name="content" type="text" as="textarea" placeholder="Tweet your reply..." />
 						<ErrorMessage name="content" component={"div"} />
 
